@@ -16,7 +16,7 @@ namespace master
             this.im = x;
             this.re = y;
         }
-
+       
         public Complex Plus(Complex x)
         {
             Complex y=new Complex(0,0);
@@ -32,7 +32,7 @@ namespace master
             y.re = re - x.re;
             return y;
         }
-        public Complex Multi(Complex x)
+        public Complex Multi (Complex x)
         {
             Complex y = new Complex(0, 0);
             y.im = re * x.im + im * x.re;
@@ -50,16 +50,34 @@ namespace master
         {
             Complex complex1=new Complex(4,2);
             Complex complex2 = new Complex(8,4) ;
-         
+           
+          string method = "Plus";
+            Complex result = new Complex(0, 0);
+                switch (method)
+            {
+                case "Plus":
+                 result=  complex1.Plus(complex2);
+                    break;
+                case "Minus":
+                  result=  complex1.Minus(complex2);
+                    break;
+                case "Multi":
+                  result=  complex1.Multi(complex2);
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
 
-            Complex result = complex1.Plus(complex2);
-            Complex result2 = complex1.Minus(complex2);
-            Complex result3 = complex1.Multi(complex2);
 
             Console.WriteLine(result.ToString());
-            Console.WriteLine(result2.ToString());
-            Console.WriteLine(result3.ToString());
             Console.ReadLine();
+        }
+
+        public static void ComplexChoose(String method)
+        {
+
+          
         }
     }
 
